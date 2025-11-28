@@ -43,9 +43,6 @@ jobs:
 
       - name: Sign the EXE file
         run: |
-          echo "======================================================================================"
-          smctl healthcheck
-          echo "======================================================================================"
           smctl sign --simple --keypair-alias ${{ secrets.SM_KEYPAIR_ALIAS }} --input ./downloaded_asset/MunimApp.exe 
 
       - name: Upload signed EXE to the existing release
